@@ -1,0 +1,287 @@
+# blox - フルサンプル
+# すべてのブロック・kind・フォームtype・テーマ設定を網羅したサンプル
+
+title: "blox フルサンプル"
+author: "blox project"
+theme: navy    # mono | navy | warm | green | solarized | nord
+shadow: false
+
+pages:
+
+  # ================================================================
+  # No.1 スタンドアロンブロック
+  # ================================================================
+  - title: "スタンドアロンブロック"
+    name: "standalone"
+    nav: true
+    nav_label: "スタンドアロン"
+    blocks:
+      - type: hero
+        h_mm: 50
+        image_label: "メインビジュアル（16:5）"
+        caption: "hero ブロック：全幅画像プレースホルダー＋キャプション"
+
+      - type: stats
+        h_mm: 22
+        items:
+          - num: "99+"
+            label: "サンプル数"
+          - num: "5種"
+            label: "レンダラー"
+          - num: "6種"
+            label: "ブロック"
+          - num: "6種"
+            label: "kind"
+
+      - type: steps
+        h_mm: 35
+        items:
+          - num: "01"
+            title: "YAMLを書く"
+            text: "ブロック構成を定義する"
+          - num: "02"
+            title: "blox を実行"
+            text: "python blox.py -f input.yaml"
+          - num: "03"
+            title: "出力を確認"
+            text: "PPTX / HTML / MD / DOCX"
+          - num: "04"
+            title: "共有する"
+            text: "チームへ配布・レビュー"
+
+      - type: cta
+        h_mm: 14
+        text: "CTA ブロック：コールトゥアクションバナー"
+
+  # ================================================================
+  # No.2 grid ブロック
+  # ================================================================
+  - title: "grid ブロック"
+    name: "grid"
+    nav: true
+    nav_label: "grid"
+    blocks:
+      - type: grid
+        kind: card
+        cols: 3
+        item_h_mm: 58
+        items:
+          - image_label: "写真A"
+            title: "card kind（3列）"
+            text: "画像＋タイトル＋テキストのカード"
+          - image_label: "写真B"
+            title: "カードB"
+            text: "grid + kind: card の2枚目"
+          - image_label: "写真C"
+            title: "カードC"
+            text: "grid + kind: card の3枚目"
+
+      - type: grid
+        kind: img
+        cols: 4
+        item_h_mm: 30
+        items:
+          - image_label: "ロゴA"
+          - image_label: "ロゴB"
+          - image_label: "ロゴC"
+          - image_label: "ロゴD"
+
+      - type: grid
+        kind: text
+        cols: 2
+        item_h_mm: 40
+        items:
+          - title: "text kind（2列）左"
+            text: "grid + kind: text のサンプルテキストです。"
+          - title: "text kind（2列）右"
+            text: "grid + kind: text のサンプルテキストです。"
+
+  # ================================================================
+  # No.3 col ブロック - img / text / list
+  # ================================================================
+  - title: "col ブロック（img・text・list）"
+    name: "col-basic"
+    blocks:
+      - type: col
+        cols: 12
+        h_mm: 52
+        cells:
+          - kind: img
+            span: 5
+            image_label: "写真（3:2）"
+          - kind: text
+            span: 7
+            title: "img + text（左画像・右テキスト）"
+            text: "col ブロックで異種セルを横並びにするサンプルです。\nspan で Bootstrap 12列グリッド相当の幅を指定します。"
+
+      - type: col
+        cols: 12
+        h_mm: 52
+        cells:
+          - kind: text
+            span: 7
+            title: "text + img（左テキスト・右画像）"
+            text: "セルの順序を入れ替えるだけで画像の左右を変えられます。\n2行目のテキストです。"
+          - kind: img
+            span: 5
+            image_label: "写真（3:2）"
+
+      - type: col
+        cols: 12
+        h_mm: 50
+        cells:
+          - kind: text
+            span: 8
+            title: "text + list ul（本文＋箇条書き）"
+            text: "左に本文テキスト、右に箇条書きリストを配置するサイドバーレイアウトです。"
+          - kind: list
+            span: 4
+            list_type: ul
+            items:
+              - "箇条書き項目A"
+              - "箇条書き項目B"
+              - "箇条書き項目C"
+
+      - type: col
+        cols: 12
+        h_mm: 50
+        cells:
+          - kind: text
+            span: 8
+            title: "text + list ol（番号付きリスト）"
+            text: "list_type: ol を指定すると番号付きリストになります。"
+          - kind: list
+            span: 4
+            list_type: ol
+            items:
+              - "手順1"
+              - "手順2"
+              - "手順3"
+
+      - type: col
+        cols: 12
+        h_mm: 50
+        cells:
+          - kind: text
+            span: 7
+            title: "text + list dl（定義リスト）"
+            text: "list_type: dl は「用語：説明」形式の文字列で定義リストを生成します。"
+          - kind: list
+            span: 5
+            list_type: dl
+            items:
+              - "対応OS：Windows / macOS"
+              - "価格：要お問い合わせ"
+              - "サポート：24時間対応"
+
+  # ================================================================
+  # No.4 col ブロック - table
+  # ================================================================
+  - title: "col ブロック（table）"
+    name: "col-table"
+    blocks:
+      - type: col
+        cols: 12
+        h_mm: 60
+        cells:
+          - kind: table
+            span: 12
+            headers: ["カテゴリ", "タイトル", "日付"]
+            items:
+              - ["お知らせ", "新製品ラインナップを追加しました", "2026-04-01"]
+              - ["イベント", "展示会に出展します（東京ビッグサイト）", "2026-03-15"]
+              - ["採用", "エンジニア・営業職を募集中です", "2026-02-01"]
+              - ["", "カテゴリなしのシンプルな行", ""]
+
+      - type: col
+        cols: 12
+        h_mm: 40
+        cells:
+          - kind: table
+            span: 12
+            headers: ["項目", "内容"]
+            items:
+              - ["対応OS", "Windows / macOS / Linux"]
+              - ["ライセンス", "MIT"]
+              - ["動作環境", "Python 3.10+"]
+              - ["依存ライブラリ", "python-pptx / python-docx / PyYAML"]
+
+  # ================================================================
+  # No.5 form kind
+  # ================================================================
+  - title: "form kind"
+    name: "form"
+    nav: true
+    nav_label: "フォーム"
+    blocks:
+      - type: col
+        cols: 12
+        h_mm: 130
+        cells:
+          - kind: form
+            span: 8
+            items:
+              - label: "テキスト（text）"
+                type: text
+                placeholder: "1行テキスト入力"
+              - label: "メール（email）"
+                type: email
+                placeholder: "info@example.com"
+              - label: "電話（tel）"
+                type: tel
+                placeholder: "06-0000-0000"
+              - label: "パスワード（password）"
+                type: password
+              - label: "ファイル（file）"
+                type: file
+              - label: "テキストエリア（textarea）"
+                type: textarea
+              - label: "セレクト（select）"
+                type: select
+                options:
+                  - "選択肢A"
+                  - "選択肢B"
+                  - "選択肢C"
+              - label: "チェックボックス（checkbox）"
+                type: checkbox
+                text: "利用規約に同意する"
+              - label: "ラジオ（radio）"
+                type: radio
+                options:
+                  - "選択肢1"
+                  - "選択肢2"
+                  - "選択肢3"
+              - label: "送信（submit）"
+                type: submit
+              - label: "ボタン（button danger）"
+                type: button
+                color: danger
+              - type: buttons
+                items:
+                  - label: "OK（primary）"
+                    color: primary
+                  - label: "キャンセル（secondary）"
+                    color: secondary
+
+      - type: col
+        cols: 12
+        h_mm: 60
+        cells:
+          - kind: form
+            span: 8
+            items:
+              - label: "label（確認画面用）"
+                type: label
+                value: "入力値がここに表示されます"
+              - label: "メールアドレス"
+                type: label
+                value: "info@example.com"
+              - label: "選択内容"
+                type: label
+                value: "選択肢A"
+              - type: buttons
+                items:
+                  - label: "送信する"
+                    color: primary
+                  - label: "戻る"
+                    color: secondary

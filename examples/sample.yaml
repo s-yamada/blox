@@ -1,0 +1,103 @@
+# ページ定義サンプル
+# blox がこのファイルを読み込んで資料を生成する
+
+pages:
+
+  - title: "トップページ"
+    blocks:
+      - type: hero
+        image_label: "写真（キャッチ画像）"
+        caption: "キャッチコピー ／ CTAボタン"
+        h_mm: 55
+
+      - type: stats
+        h_mm: 22
+        items:
+          - num: "17年"
+            label: "創業"
+          - num: "200社以上"
+            label: "取引実績"
+          - num: "5拠点"
+            label: "全国対応"
+          - num: "24h"
+            label: "サポート"
+
+      - type: grid
+        kind: card
+        cols: 3
+        item_h_mm: 60
+        items:
+          - image_label: "写真"
+            title: "製品A"
+            text: "製品Aの説明文"
+          - image_label: "写真"
+            title: "製品B"
+            text: "製品Bの説明文"
+          - image_label: "写真"
+            title: "製品C"
+            text: "製品Cの説明文"
+
+      - type: cta
+        text: "お問い合わせ・資料請求はこちら"
+
+  - title: "お問い合わせ"
+    blocks:
+      - type: col
+        cols: 12
+        h_mm: 100
+        cells:
+          - kind: form
+            span: 8
+            items:
+              - label: "会社名"
+                type: text
+                placeholder: "株式会社〇〇"
+              - label: "お名前"
+                type: text
+                placeholder: "山田 太郎"
+              - label: "メールアドレス"
+                type: email
+                placeholder: "info@example.com"
+              - label: "お問い合わせ内容"
+                type: textarea
+              - label: "種別"
+                type: select
+                options:
+                  - "製品について"
+                  - "サービスについて"
+                  - "その他"
+              - label: "同意する"
+                type: checkbox
+                text: "プライバシーポリシーに同意します"
+              - label: "添付ファイル"
+                type: file
+              - label: "送信する"
+                type: submit
+
+  - title: "入力確認"
+    blocks:
+      - type: col
+        cols: 12
+        h_mm: 80
+        cells:
+          - kind: form
+            span: 8
+            items:
+              - label: "会社名"
+                type: label
+                value: "株式会社〇〇"
+              - label: "お名前"
+                type: label
+                value: "山田 太郎"
+              - label: "メールアドレス"
+                type: label
+                value: "info@example.com"
+              - label: "種別"
+                type: label
+                value: "製品について"
+              - type: buttons
+                items:
+                  - label: "送信する"
+                    color: primary
+                  - label: "戻る"
+                    color: secondary
