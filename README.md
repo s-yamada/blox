@@ -1,21 +1,20 @@
 # blox
 
-YAMLでサイトの構造をブロックとして定義し、資料やHTMLモックアップを出力するCLIツール。
-共通のWebサイトの構造から、印刷・配布用資料やHTMLモックアップなど、用途に応じて出力することを目的としています。
+Webサイトの構成をYAMLで書き、提案資料やHTMLモックアップを出力するCLIツール。
 
-## できること
+## Features
 
-- 1つのYAMLから PowerPoint（A4縦）・HTML（Bootstrap 5 / Tailwind CSS）・Markdown・Word を出力
-- ヒーロー・実績数字・CTA・ステップ・グリッド・カラムなどのブロックでページを組み立てる
-- PowerPoint のカラーテーマ（6種）・独自テンプレートの利用
-- プラグインでブロックの種類を追加
+- サイトの構成を1つのYAMLで書き、PowerPoint・Word の資料と HTML モックアップを同じ定義から出力できる
+- ヒーロー・グリッド・カラムなど、Webサイトでよく使うブロックの組み合わせでページを表す
+- 見た目はテーマやテンプレートで差し替えられ、YAMLには内容だけを書けばよい
+- 独自のブロックをプラグインとして追加できる
 
-## 動作環境
+## Requirements
 
 - Python 3
 - python-pptx・python-docx・PyYAML・lxml（`requirements.txt`）
 
-## インストール
+## Installation
 
 ```bash
 # 依存ライブラリのインストールとコマンド登録（~/.local/bin/blox）
@@ -29,27 +28,19 @@ pip install -r requirements.txt
 python blox.py -f input.yaml -o output.pptx
 ```
 
-## 使い方
+## Usage
 
 ```bash
-# PowerPoint 出力（テーマ指定）
-blox -f examples/sample.yaml --theme nord -o output.pptx
+# PowerPoint 出力
+blox -f examples/sample.yaml -o output.pptx
 
-# HTML 出力（Bootstrap 5 / Tailwind CSS）
+# HTML 出力（Bootstrap 5）
 blox -f examples/sample.yaml --renderer html_bs -o output/
-blox -f examples/sample.yaml --renderer html_tw -o output/
-
-# Markdown・Word 出力
-blox -f examples/sample.yaml --renderer markdown -o output.md
-blox -f examples/sample.yaml --renderer docx -o output.docx
-
-# ヘルプ
-blox --help
 ```
 
-YAMLの書き方・ブロック一覧・テーマ・テンプレートは [docs/usage.md](docs/usage.md)、
+コマンドの例・YAMLの書き方・ブロック一覧・テーマ・テンプレートは [docs/usage.md](docs/usage.md)、
 ブロックの追加は [docs/plugin.md](docs/plugin.md) を参照してください。
 
-## 利用条件
+## License
 
 [LICENSE](LICENSE) を参照
